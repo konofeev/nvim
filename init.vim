@@ -1,6 +1,13 @@
 " Конфигурация NeoVim
 " TODO: привести в порядок (разбить на логические части), убрать лишнее, добавить пояснения
 
+if &compatible
+  set nocompatible
+endif
+
+filetype plugin indent on
+syntax enable
+
 " Аббревиатуры
 ab jj <C-r>*
 
@@ -188,3 +195,7 @@ menu Folding.indent :set foldmethod=indent<CR>
 menu Folding.syntax :set foldmethod=syntax<CR>
 menu Folding.manual :set foldmethod=manual<CR>
 map <F3> :emenu Folding.<TAB>
+
+hi VertSplit cterm=NONE ctermfg=16
+
+let g:loaded_python3_provider=1
