@@ -5,6 +5,11 @@ if &compatible
   set nocompatible
 endif
 
+set runtimepath+=~/.config/nvim/extension/vimproc.vim
+set runtimepath+=~/.config/nvim/extension/vimfiler.vim
+set runtimepath+=~/.config/nvim/extension/unite.vim
+set runtimepath+=~/.config/nvim/extension/vimshell.vim
+
 filetype plugin indent on
 syntax enable
 
