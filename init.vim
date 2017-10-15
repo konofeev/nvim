@@ -9,6 +9,11 @@ set runtimepath+=~/.config/nvim/extension/vimproc.vim
 set runtimepath+=~/.config/nvim/extension/vimfiler.vim
 set runtimepath+=~/.config/nvim/extension/unite.vim
 set runtimepath+=~/.config/nvim/extension/vimshell.vim
+" 'vim-scripts/dbext.vim'
+" 'junegunn/vim-easy-align'
+" 'easymotion/vim-easymotion'
+" 'tomtom/tcomment_vim'
+" 'tpope/vim-surround'
 
 filetype plugin indent on
 syntax enable
