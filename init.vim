@@ -9,6 +9,10 @@ set runtimepath+=~/.config/nvim/extension/vimproc.vim
 set runtimepath+=~/.config/nvim/extension/vimfiler.vim
 set runtimepath+=~/.config/nvim/extension/unite.vim
 set runtimepath+=~/.config/nvim/extension/vimshell.vim
+set runtimepath+=~/.config/nvim/extension/vim-easymotion
+set runtimepath+=~/.config/nvim/extension/Mark--Karkat
+set runtimepath+=~/.config/nvim/extension/vim-easy-align
+
 " 'vim-scripts/dbext.vim'
 " 'junegunn/vim-easy-align'
 " 'easymotion/vim-easymotion'
@@ -178,6 +182,17 @@ tnoremap <Esc> <C-\><C-n>
 nnoremap <SPACE>y :let @+ = expand("%:p")<CR>
 " Разделить окно и открыть файл под курсором
 nnoremap <SPACE>gf <C-w>vgf
+nmap <SPACE>\ :e ~/.config/nvim/init.vim<CR>
+nmap <SPACE>f :VimFiler<CR>
+nmap <SPACE>s :VimShell<CR>
+nmap <SPACE>p :Unite file_rec<CR>
+
+" Быстрый переход в командный режим
+nmap <SPACE><SPACE> <Plug>(easymotion-overwin-f)
+
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+vmap ga <Plug>(EasyAlign)
 
 set wildmenu
 set wcm=<Tab>
