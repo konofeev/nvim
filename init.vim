@@ -5,13 +5,29 @@ if &compatible
   set nocompatible
 endif
 
-set runtimepath+=~/.config/nvim/extension/vimproc.vim
-set runtimepath+=~/.config/nvim/extension/vimfiler.vim
-set runtimepath+=~/.config/nvim/extension/unite.vim
-set runtimepath+=~/.config/nvim/extension/vimshell.vim
-set runtimepath+=~/.config/nvim/extension/vim-easymotion
-set runtimepath+=~/.config/nvim/extension/Mark--Karkat
-set runtimepath+=~/.config/nvim/extension/vim-easy-align
+set runtimepath+=~/.config/nvim/./bundle/repos/github.com/Shougo/dein.vim
+if dein#load_state('~/.config/nvim/./bundle')
+  call dein#begin('~/.config/nvim/./bundle')
+
+  call dein#add('~/.config/nvim/./bundle/repos/github.com/Shougo/dein.vim')
+
+  call dein#add('Shougo/neosnippet.vim')
+  call dein#add('Shougo/neosnippet-snippets')
+  call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
+  call dein#add('Shougo/vimshell')
+  call dein#add('Shougo/denite.nvim')
+
+  " Required:
+  call dein#end()
+  call dein#save_state()
+endif
+" set runtimepath+=~/.config/nvim/extension/vimproc.vim
+" set runtimepath+=~/.config/nvim/extension/vimfiler.vim
+" set runtimepath+=~/.config/nvim/extension/unite.vim
+" set runtimepath+=~/.config/nvim/extension/vimshell.vim
+" set runtimepath+=~/.config/nvim/extension/vim-easymotion
+" set runtimepath+=~/.config/nvim/extension/Mark--Karkat
+" set runtimepath+=~/.config/nvim/extension/vim-easy-align
 
 " 'vim-scripts/dbext.vim'
 " 'junegunn/vim-easy-align'
@@ -21,6 +37,13 @@ set runtimepath+=~/.config/nvim/extension/vim-easy-align
 
 filetype plugin indent on
 syntax enable
+
+if dein#check_install()
+  call dein#install()
+endif
+
+let g:python_host_prog="/usr/bin/python2"
+let g:python3_host_prog = "/usr/bin/python3"
 
 " Аббревиатуры
 ab jj <C-r>*
@@ -222,5 +245,9 @@ menu Folding.manual :set foldmethod=manual<CR>
 map <F3> :emenu Folding.<TAB>
 
 hi VertSplit cterm=NONE ctermfg=16
+hi MarkWord1 ctermbg=149
+hi MarkWord2 ctermbg=153
+hi MarkWord3 ctermbg=159
+hi MarkWord4 ctermbg=179
+hi MarkWord5 ctermbg=192
 
-let g:loaded_python3_provider=1
