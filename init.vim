@@ -16,6 +16,8 @@ if dein#load_state('~/.config/nvim/./bundle')
   call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
   call dein#add('Shougo/vimshell')
   call dein#add('Shougo/denite.nvim')
+  call dein#add('Shougo/Unite.vim')
+  call dein#add('Shougo/vimfiler.vim')
 
   " Required:
   call dein#end()
