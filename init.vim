@@ -1,16 +1,17 @@
 " Конфигурация NeoVim
-" TODO: привести в порядок (разбить на логические части), убрать лишнее, добавить пояснения
+let $VIM_CONFIGURATE=$HOME."/.config/nvim/"
 
 if &compatible
   set nocompatible
 endif
 
-set runtimepath+=~/.config/nvim/./bundle/repos/github.com/Shougo/dein.vim
-if dein#load_state('~/.config/nvim/./bundle')
-  call dein#begin('~/.config/nvim/./bundle')
+set runtimepath+=$VIM_CONFIGURATE/bundle/repos/github.com/Shougo/dein.vim
 
-  call dein#add('~/.config/nvim/./bundle/repos/github.com/Shougo/dein.vim')
+if dein#load_state($VIM_CONFIGURATE.'/bundle')
+  call dein#begin($VIM_CONFIGURATE.'/bundle')
+  call dein#add($VIM_CONFIGURATE.'/bundle/repos/github.com/Shougo/dein.vim')
 
+  " Расширения
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
   call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
@@ -32,15 +33,16 @@ endif
 filetype plugin indent on
 syntax enable
 
+" Установка неустановленных плагинов
 if dein#check_install()
   call dein#install()
 endif
 
-source ~/.config/nvim/config/variable.vim
-source ~/.config/nvim/config/common.vim
-source ~/.config/nvim/config/function.vim
-source ~/.config/nvim/config/abbreviation.vim
-source ~/.config/nvim/config/hotkey.vim
-source ~/.config/nvim/config/menu.vim
-source ~/.config/nvim/config/plugin.vim
-source ~/.config/nvim/config/color.vim
+source $VIM_CONFIGURATE/configurate/variable.vim
+source $VIM_CONFIGURATE/configurate/common.vim
+source $VIM_CONFIGURATE/configurate/abbreviation.vim
+source $VIM_CONFIGURATE/configurate/color.vim
+source $VIM_CONFIGURATE/configurate/function.vim
+source $VIM_CONFIGURATE/configurate/hotkey.vim
+source $VIM_CONFIGURATE/configurate/menu.vim
+source $VIM_CONFIGURATE/configurate/plugin.vim

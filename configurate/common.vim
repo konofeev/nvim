@@ -1,8 +1,8 @@
 " ОБЩИЕ НАСТРОЙКИ
 
 " Настройки python
-let g:python_host_prog="/usr/bin/python2"
-let g:python3_host_prog = "/usr/bin/python3"
+let g:python_host_prog=$PYTHON_HOME_HOST
+let g:python3_host_prog=$PYTHON3_HOME_HOST
 
 " Возможность скрыть(закрыть) изменённый буфер(файл)
 set hidden
@@ -81,9 +81,9 @@ set writebackup
 set undofile
 
 " Каталоги для временных файлов
-set backupdir=$HOME/.config/nvim/temp/backup/
-set directory=$HOME/.config/nvim/temp/swap/
-set undodir=$HOME/.config/nvim/temp/undo/
+set backupdir=$VIM_CONFIGURATE/temp/backup/
+set directory=$VIM_CONFIGURATE/temp/swap/
+set undodir=$VIM_CONFIGURATE/temp/undo/
 
 " При вводе закрывающей скобки подсвечиваем открывающую скобку
 set showmatch
@@ -107,3 +107,5 @@ set pastetoggle=
 syn sync minlines=20
 syn sync maxlines=300
 
+set tags+=$TAGS_PROJECT
+set tags+=$TAGS_SOURCE

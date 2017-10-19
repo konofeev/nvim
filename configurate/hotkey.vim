@@ -69,7 +69,7 @@ nnoremap <SPACE>y :let @+ = expand("%:p")<CR>
 nnoremap <SPACE>gf <C-w>vgf
 
 " Открыть основной конфиг
-nmap <SPACE>\ :e ~/.config/nvim/init.vim<CR>
+nmap <SPACE>\ :e $VIM_CONFIGURATE/init.vim<CR>
 
 " }}}
 
