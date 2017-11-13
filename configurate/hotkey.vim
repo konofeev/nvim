@@ -71,6 +71,8 @@ nnoremap <SPACE>gf <C-w>vgf
 " Открыть основной конфиг
 nmap <SPACE>\ :e $VIM_CONFIGURATE/init.vim<CR>
 
+noremap \\ :cd $PROJECT_HOME<CR>
+
 " }}}
 
 " ПЛАГИНЫ {{{

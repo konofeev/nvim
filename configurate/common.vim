@@ -4,6 +4,9 @@
 let g:python_host_prog=$PYTHON_HOME_HOST
 let g:python3_host_prog=$PYTHON3_HOME_HOST
 
+" Номера строк
+set number
+
 " Возможность скрыть(закрыть) изменённый буфер(файл)
 set hidden
 
@@ -49,7 +52,7 @@ set tabstop=4
 setlocal tabstop=4
 set softtabstop=4
 
-" Используем пробелы вместо табуляций
+" Используем табуляцию
 set expandtab
 
 " Более 'умные' отступы при вставке их с помощью <TAB>
@@ -109,3 +112,18 @@ syn sync maxlines=300
 
 set tags+=$TAGS_PROJECT
 set tags+=$TAGS_SOURCE
+
+set statusline=
+set statusline+=%7*\[%n]                                  "buffernr
+set statusline+=%1*\ %<%t\                                "File+path
+set statusline+=%2*\ %y\                                  "FileType
+set statusline+=%3*\ %{''.(&fenc!=''?&fenc:&enc).''}      "Encoding
+set statusline+=%3*\ %{(&bomb?\",BOM\":\"\")}\            "Encoding2
+set statusline+=%4*\ %{&ff}\                              "FileFormat (dos/unix..)
+set statusline+=%8*\ %=\ row:%l/%L\ (%03p%%)\             "Rownumber/total (%)
+set statusline+=%9*\ col:%03c\                            "Colnr
+set statusline+=%0*\ \ %m%r%w\ %P\ \                      "Modified? Readonly? Top/bot.
+
+autocmd TermOpen * set filetype=terminal
+
+g:netrw_banner=0
