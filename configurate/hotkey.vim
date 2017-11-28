@@ -73,23 +73,6 @@ nmap <SPACE>\ :e $VIM_CONFIGURATE/init.vim<CR>
 
 noremap \\ :cd $PROJECT_HOME<CR>
 
-" }}}
-
-" ПЛАГИНЫ {{{
-
-" Файловый менеджер
-nmap <SPACE>f :VimFiler<CR>
-
-" Терминал
-nmap <SPACE>s :VimShell<CR>
-nmap <SPACE>p :Unite file_rec<CR>
-
-" Быстрый переход в командный режим
-nmap <SPACE><SPACE> <Plug>(easymotion-overwin-f)
-
-" Выравнивание кода
-xmap ga <Plug>(EasyAlign)
-nmap ga <Plug>(EasyAlign)
-vmap ga <Plug>(EasyAlign)
+noremap <SPACE>] :e $PROJECT_LOG<CR>
 
 " }}}

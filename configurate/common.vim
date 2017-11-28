@@ -42,6 +42,8 @@ set scrolloff=5
 " Автосмена каталога
 autocmd BufEnter * silent! lcd %:p:h
 
+autocmd BufRead *.log :set syntax=log
+
 " Корректная работа с кириллицой
 set iskeyword=$,@,a-z,A-Z,48-57,_,128-175,192-255
 
